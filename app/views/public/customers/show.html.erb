@@ -1,0 +1,24 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+
+    <div class='col-md-3'>
+      <h4>ユーザー情報</h4>
+        <%= render 'info', user: @user %>
+
+      <h4 class="mt-3">商品を投稿</h4>
+      <%= render 'public/products/form', product: @product %>
+    </div>
+
+    <div class='col-md-8 offset-md-1'>
+      <h2>投稿した商品</h2>
+
+      <%= @products.each do |product| %>
+      <span><%- product.introduction %></span>
+
+
+      <% end %>
+
+    </div>
+
+  </div>
+</div>

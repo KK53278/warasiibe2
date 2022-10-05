@@ -8,9 +8,48 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
   <body>
+    <% if customer_signed_in? %>
+    <header>
+      <%= link_to public_customer_path(current_customer), class: 'headline' do %>
+        ワラシベ長者
+      <% end %><br>
+
+      <a class="button" href="#">ランキング</a>
+
+      <%= link_to public_products_index_path, class: 'button' do %>
+        商品を探す
+      <% end %>
+
+      <%= link_to destroy_customer_session_path, method: :delete, class: 'button' do %>
+        ログアウト
+      <% end %>
+    </header>
+    <% else %>
+    <header>
+      <%= link_to root_path, class: 'headline' do %>
+        ワラシベ長者
+      <% end %><br>
+      <a class="button" href="#">About</a>
+
+      <%= link_to new_customer_registration_path, class: 'button' do %>
+        新規登録
+      <% end %>
+
+      <%= link_to new_customer_session_path, class: 'button' do %>
+        ログイン
+      <% end %>
+    </header>
+    <% end %>
+
+    <main>
     <%= yield %>
+    </main>
+
+    <footer>
+    <p class="footer-text">© All rights reserved by WarashibeChoja</p>
+    </footer>
+
   </body>
 </html>
