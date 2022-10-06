@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   sessions: "admin/sessions"
 }
   namespace :public do
-  resources :customers, only: [:index, :show, :edit, :update]
-  resources :products, only: [:create, :index]
+    resources :customers, only: [:index, :show, :edit, :update]
+    resources :products, only: [:new, :create, :index, :show]
 end
 
 

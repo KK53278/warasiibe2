@@ -1,20 +1,20 @@
 <table class='table'>
-
+  <%= link_to customer_session_path(customer.id) do %>
   <tr>
     <th>ユーザー名</th>
-	  <th></th>
+	  <th><%= customer.name %></th>
   </tr>
   <tr>
 	  <th>自己紹介</th>
-	  <th></th>
+	  <th><%= customer.introduction %></th>
   </tr>
   <tr>
-    <th>フォローしているユーザー</th>
+    <th>フォロー</th>
     <th></th>
   </tr>
   <tr>
     <th>フォロワー</th>
     <th></th>
   </tr>
-
+  <% end %>
 </table>

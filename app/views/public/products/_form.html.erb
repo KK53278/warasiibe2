@@ -1,11 +1,16 @@
-<%= form_with model:@product, url: '/customers', method: :post do |f| %>
+<%= form_with model:product, url: public_products_path do |f| %>
 
   <div class="form-group">
-    <%= f.label :商品説明 %>
-    <%= f.text_area :introduction, class: 'form-control product_introduction' %>
+
+    <h6>商品画像</h6>
+      <%= f.file_field :image, accept: "image/*" %>
+    <h6>商品名</h6>
+      <%= f.text_field :product_name %>
+    <h6>商品説明</h6>
+      <%= f.text_area :caption %>
   </div>
 
   <div class="form-group">
-    <%= f.submit class: 'btn btn-success' %>
+    <%= f.submit '投稿' %>
   </div>
 <% end %>

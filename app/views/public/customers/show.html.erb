@@ -3,7 +3,8 @@
 
     <div class='col-md-3'>
       <h4>ユーザー情報</h4>
-        <%= render 'info', user: @user %>
+
+        <%= render 'info', customer: @customer %>
 
       <h4 class="mt-3">商品を投稿</h4>
       <%= render 'public/products/form', product: @product %>
@@ -12,9 +13,14 @@
     <div class='col-md-8 offset-md-1'>
       <h2>投稿した商品</h2>
 
-      <%= @products.each do |product| %>
-      <span><%- product.introduction %></span>
+      <% @products.each do |product| %>
 
+      <h6>商品画像</h6>
+        <%= image_tag product.get_image %>
+      <h6>商品名</h6>
+        <%= product.product_name %>
+      <h6>商品説明</h6>
+        <%= product.caption %>
 
       <% end %>
 
