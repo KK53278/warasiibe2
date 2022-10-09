@@ -24,7 +24,11 @@ header {
 header .headline {
   font-size: 72px;
   color: #FBFCFC;
-  margin: 10px auto 0;
+  padding: 10px;
+  font-weight: bold;
+  position: relative;
+  margin: 0;
+  -webkit-text-stroke:1px #000;
 }
 
 header .button{

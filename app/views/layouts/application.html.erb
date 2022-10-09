@@ -31,7 +31,10 @@
       <%= link_to root_path, class: 'headline' do %>
         ワラシベ長者
       <% end %><br>
-      <a class="button" href="#">About</a>
+
+      <%= link_to homes_about_path, class: 'button' do %>
+        About
+      <% end %>
 
       <%= link_to new_customer_registration_path, class: 'button' do %>
         新規登録

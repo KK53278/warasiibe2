@@ -1,0 +1,17 @@
+<div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  		<h1>商品内容を編集する</h1>
+    <%= form_with model: @product, url: public_product_path(@product) do |f| %>
+  <div class="form-group">
+    <label for="product_name">商品名</label><br>
+    <%= f.text_field :product_name, autofocus: true, id:"inputText", placeholder:""%>
+  </div>
+  <div class="form-group">
+    <label for="caption">商品説明</label><br>
+    <%= f.text_field :caption, autofocus: true, id:"inputText", placeholder:""%>
+  </div>
+    <input type="submit" name="commit" value="Update Product" class="btn btn-success" data-disable-with="Update Product">
+</form>
+  		<%= link_to "Show" , public_product_path %> |
+  		<%= link_to "Back" , public_products_path %>
+  	<% end %>
+  </div>

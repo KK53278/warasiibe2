@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :public do
+    get 'favorites/create'
+    get 'favorites/destroy'
+  end
+  namespace :public do
     get 'products/show'
     get 'products/index'
   end
@@ -21,8 +25,10 @@ Rails.application.routes.draw do
 }
   namespace :public do
     resources :customers, only: [:index, :show, :edit, :update]
-    resources :products, only: [:new, :create, :index, :show]
-end
+    resources :products
+      resources :favorites, only: [:create, :destroy]
+      resources :product_comments, only: [:create, :destroy]
+  end
 
 
 end

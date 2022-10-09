@@ -5,5 +5,8 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :post_images, dependent: :destroy
+  has_many :products
+  has_many :favorites, dependent: :destroy
   has_one_attached :image
+
 end

@@ -1,6 +1,6 @@
 class Public::ProductsController < ApplicationController
-  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
-
+before_action :authenticate_customer!
+before_action :ensure_correct_customer, { only: [:edit, :update, :destroy] }
 
   def create
     # binding.pry
@@ -21,9 +21,32 @@ class Public::ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @customer = current_customer
+  end
+
+  def edit
+        @product = Product.find(params[:id])
+    if  @product.customer == current_customer
+        render "edit"
+    else
+        redirect_to public_products_path(@product.id)
+    end
+  end
+
+  def update
+    if @product.update(product_params)
+      redirect_to public_product_path, notice: "You have updated book successfully."
+    else
+      render "edit"
+    end
   end
 
   def destroy
+        @product = Product.find(params[:id])
+    if  @product.customer == current_customer
+        @product.destroy
+        redirect_to public_products_path
+    end
   end
 
   private
@@ -32,5 +55,12 @@ class Public::ProductsController < ApplicationController
     params.require(:product).permit(:product_name, :caption, :image)
   end
 
+  def ensure_correct_customer
+      @product = Product.find(params[:id])
+      @customer = @product.customer
+    if current_customer != @customer
+      redirect_to products_path
+    end
+  end
 
 end

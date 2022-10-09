@@ -1,7 +1,8 @@
 class Product < ApplicationRecord
   has_one_attached :image
   belongs_to :customer
-  
+  has_many :favorites, dependent: :destroy
+
   def get_image
     unless image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')
@@ -10,5 +11,8 @@ class Product < ApplicationRecord
     end
     image
   end
-  
+
+  def favorited_by?(customer)
+    favorites.where(customer_id: customer.id).exists?
+  end
 end
