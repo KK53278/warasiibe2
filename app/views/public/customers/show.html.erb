@@ -23,7 +23,13 @@
         <% @products.each do |product| %>
         <tr>
           <td>
-            <%= image_tag product.get_image.variant(resize:'100x100') %>
+            <% if product.images.attached? %>
+              <% product.images.each do |image| %>
+                <%= image_tag image.variant(resize:'100x100') %>
+              <% end %>
+            <% else %>
+              <%= image_tag 'no_image.jpg' %>
+            <% end %>
           </td>
           <td><%= link_to product.product_name, public_product_path(product.id) %></td>
           <td><%= link_to product.caption, public_product_path(product.id) %></td>

@@ -1,1 +1,1 @@
-$('.favorite-<%= @favorite.product_id %>').html("<%= j(render 'favorites/btn',  product: @favorite.product ) %>")
+$('.favorite-<%= @product.id %>').html("<%= j(render 'public/favorites/btn',  product: @product ) %>")

@@ -26,7 +26,8 @@ Rails.application.routes.draw do
   namespace :public do
     resources :customers, only: [:index, :show, :edit, :update]
     resources :products
-      resources :favorites, only: [:create, :destroy]
+      resource :favorites, only: [:create, :destroy]
+
       resources :product_comments, only: [:create, :destroy]
   end
 

@@ -1,8 +1,11 @@
 <table class='table'>
-  <%= link_to customer_session_path(customer.id) do %>
+  <%#= link_to customer_session_path(customer.id) do %>
   <tr>
-    <th>ユーザー名</th>
-	  <th><%= customer.name %></th>
+      <%= image_tag customer.get_profile_image(60,60) %>
+    <tr>
+      <th>ユーザー名</th>
+  	  <th><%= customer.name %></th>
+  	 </tr>
   </tr>
   <tr>
 	  <th>自己紹介</th>
@@ -16,5 +19,12 @@
     <th>フォロワー</th>
     <th></th>
   </tr>
-  <% end %>
+  <%# end %>
+  <tr>
+    <th>
+      <%= link_to edit_public_customer_path(customer), class: "btn btn-outline-secondary btn-block" do %>
+      <i class="fas fa-solid fa-user-gear"></i>
+      <%end%>
+    </th>
+  </tr>
 </table>

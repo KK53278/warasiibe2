@@ -15,10 +15,10 @@
         <tbody>
         <% @products.each do |product| %>
         <tr>
-          <td><%= image_tag product.get_image.variant(resize:'100x100') %></td>
+          <td><%#= image_tag product.get_image.variant(resize:'100x100') %></td>
           <td><%= link_to product.product_name, public_product_path(product.id) %></td>
           <td><%= link_to product.caption, public_product_path(product.id) %></td>
-          <td><%= render "public/favorites/btn", product: product %></td>
+          <td class="favorite-<%= product.id%>"><%= render "public/favorites/btn", product: product %></td>
         </tr>
         <% end %>
         </tbody>
