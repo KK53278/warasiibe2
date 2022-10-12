@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   has_many_attached :images
   belongs_to :customer
   has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def get_images
     unless images.attached?
@@ -15,5 +16,19 @@ class Product < ApplicationRecord
 
   def favorited_by?(customer)
     favorites.where(customer_id: customer.id).exists?
+  end
+  # 検索方法分岐
+  def self.looks(search, word)
+    if search == "perfect_match"
+      @product = Product.where("product_name LIKE?","#{word}")
+    elsif search == "forward_match"
+      @product = Product.where("product_name LIKE?","#{word}%")
+    elsif search == "backward_match"
+      @product = Product.where("product_name LIKE?","%#{word}")
+    elsif search == "partial_match"
+      @product = Product.where("product_name LIKE?","%#{word}%")
+    else
+      @product = Product.all
+    end
   end
 end

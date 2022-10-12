@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
   namespace :public do
+    get 'searches/search'
+  end
+  namespace :public do
+    get 'relationships/followings'
+    get 'relationships/followers'
+  end
+  namespace :public do
     get 'favorites/create'
     get 'favorites/destroy'
   end
@@ -24,12 +31,18 @@ Rails.application.routes.draw do
   sessions: "admin/sessions"
 }
   namespace :public do
-    resources :customers, only: [:index, :show, :edit, :update]
-    resources :products
+    resources :customers, only: [:index, :show, :edit, :update] do
+      resource :relationships, only: [:create, :destroy]
+    get 'followings' => 'relationships#followings', as: 'followings'
+    get 'followers' => 'relationships#followers', as: 'followers'
+   end
+    resources :products do
       resource :favorites, only: [:create, :destroy]
+      resources :comments, only: [:create, :destroy]
+   end
 
-      resources :product_comments, only: [:create, :destroy]
-  end
+   get "search" => "searches#search"
+ end
 
 
 end

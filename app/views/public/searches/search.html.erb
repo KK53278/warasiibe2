@@ -1,0 +1,24 @@
+<h2>検索結果</h2>
+
+<table class="table table-hover table-inverse">
+  <!--検索対象モデルがユーザーの時 -->
+  <% if @range == "Customer" %>
+    <tbody>
+      <% @customers.each do |customer| %>
+        <tr>
+          <td><%= link_to customer.name, customer %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% else %>
+    <!--検索対象モデルがユーザーではない時(= 検索対象モデルが商品の時) -->
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= link_to product.product_name,public_product_path(product.id) %></td>
+          <td><%= product.caption %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% end %>
+</table>

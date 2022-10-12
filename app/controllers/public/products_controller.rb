@@ -20,6 +20,7 @@ before_action :ensure_correct_customer, { only: [:edit, :update, :destroy] }
   def show
     @product = Product.find(params[:id])
     @customer = current_customer
+    @comment = Comment.new
   end
 
   def edit

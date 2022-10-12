@@ -1,0 +1,21 @@
+<table>
+  <tbody>
+      <% product.comments.each do |comment| %>
+      <tr>
+
+        <td>
+          <%= link_to public_customer_path(comment.customer) do %>
+            <%= image_tag comment.customer.get_profile_image(40,40) %><br>
+            <%= comment.customer.name %>
+          <% end %>
+        </td>
+        <td><%= comment.comment %></td>
+        <td>
+          <% if comment.customer == current_customer %>
+            <%= link_to "削除",  public_product_comment_path(product, comment), method: :delete, remote: true %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>

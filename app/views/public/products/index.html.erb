@@ -1,29 +1,29 @@
-<div class="container px-5 px-sm-0">
-<div class="row">
-  <h2>検索機能</h2>
+  <div class="col-md-8 offset-md-1">
 
-      <div class="col-md-8 offset-md-1">
-      <h2>新着商品</h2>
-        <table class="table table-hover table-inverse">
 
-        <thead>
-          <th></th>
-          <th>商品名</th>
-          <th>商品詳細</th>
-        </thead>
+  <h2>キーワードから探す</h2>
+    <table class="table table-hover table-inverse">
+    <!--検索フォーム-->
+    <div style="text-align:center"><%= render 'public/searches/form', customer: @customer %></div>
 
-        <tbody>
-        <% @products.each do |product| %>
-        <tr>
-          <td><%#= image_tag product.get_image.variant(resize:'100x100') %></td>
-          <td><%= link_to product.product_name, public_product_path(product.id) %></td>
-          <td><%= link_to product.caption, public_product_path(product.id) %></td>
-          <td class="favorite-<%= product.id%>"><%= render "public/favorites/btn", product: product %></td>
-        </tr>
+    <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td>
+        <% if product.images.attached? %>
+          <% product.images.each do |image| %>
+            <%= image_tag image.variant(resize:'100x100') %>
+          <% end %>
+        <% else %>
+          <%= image_tag 'no_image.jpg' %>
         <% end %>
-        </tbody>
+      </td>
+      <td><%= link_to product.product_name, public_product_path(product.id) %></td>
+      <td><%= product.caption %></td>
+      <td class="favorite-<%= product.id%>"><%= render "public/favorites/btn", product: product %></td>
+    </tr>
+    <% end %>
+    </tbody>
 
-      </table>
-      </div>
-  </div>
-  </div>
+  </table>
+</div>

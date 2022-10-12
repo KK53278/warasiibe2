@@ -1,9 +1,9 @@
 <% if product.favorited_by?(current_customer) %>
-  <%= link_to public_favorites_path(product_id: product), method: :delete, remote: true do %><p class="text-danger">
+  <%= link_to   public_product_favorites_path(product_id: product), method: :delete, remote: true do %><p class="text-danger">
   ♥<%= product.favorites.count %></p>
   <% end %>
 <% else %>
-  <%= link_to public_favorites_path(product_id: product), method: :post, remote: true do %>
+  <%= link_to  public_product_favorites_path(product_id: product), method: :post, remote: true do %>
   ♥<%= product.favorites.count %>
   <% end %>
 <% end %>

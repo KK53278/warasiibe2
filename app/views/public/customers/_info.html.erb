@@ -1,30 +1,38 @@
-<table class='table'>
-  <%#= link_to customer_session_path(customer.id) do %>
-  <tr>
-      <%= image_tag customer.get_profile_image(60,60) %>
-    <tr>
-      <th>ユーザー名</th>
-  	  <th><%= customer.name %></th>
-  	 </tr>
-  </tr>
-  <tr>
-	  <th>自己紹介</th>
-	  <th><%= customer.introduction %></th>
-  </tr>
-  <tr>
-    <th>フォロー</th>
-    <th></th>
-  </tr>
-  <tr>
-    <th>フォロワー</th>
-    <th></th>
-  </tr>
-  <%# end %>
-  <tr>
-    <th>
-      <%= link_to edit_public_customer_path(customer), class: "btn btn-outline-secondary btn-block" do %>
-      <i class="fas fa-solid fa-user-gear"></i>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <table>
+      <tr>
+        <td>
+          <%= image_tag customer.get_profile_image(60,60) %>
+        </td>
+        <td>
+          <h3 class="card-title">
+  	      <%= customer.name %>
+  	      </h3>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h6 class="card-subtitle mb-2 text-muted">
+          <%= link_to customer.followings.count, public_customer_followings_path(customer) %> フォロー  </h6>
+
+        </td>
+        <td>
+          <h6 class="card-subtitle mb-2 text-muted">
+          <%= link_to customer.followers.count, public_customer_followers_path(customer) %> フォロワー
+          </h6>
+        </td>
+      </tr>
+    </table>
+
+      <p class="card-text">自己紹介 : <%= customer.introduction %></p>
+    <!--ユーザーならeditボタン、以外ならフォローボタン-->
+      <% if current_customer != customer %>
+        <%= render "public/relationships/btn", customer: customer %></td>
+      <% else %>
+        <%= link_to edit_public_customer_path(customer) do %>
+          <i class="fas fa-solid fa-gear"></i>
+        <%end%>
       <%end%>
-    </th>
-  </tr>
-</table>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<h2>フォローしているユーザー</h2>
+<% if @customers.exists? %>
+  <%= @customers.name %>
+<% else %>
+  <p>ユーザーはいません</p>
+<% end %>
