@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   has_many_attached :images
   belongs_to :customer
   has_many :favorites, dependent: :destroy
+  has_many :favorited_customers, through: :favorites, source: :customer
   has_many :comments, dependent: :destroy
 
   def get_images

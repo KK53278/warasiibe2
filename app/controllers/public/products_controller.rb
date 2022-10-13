@@ -15,6 +15,9 @@ before_action :ensure_correct_customer, { only: [:edit, :update, :destroy] }
 
   def index
     @products = Product.all
+    @products = Product.includes(:favorited_customers).sort {|a,b| b.favorited_customers.size <=> a.favorited_customers.size}
+    #@customers = Customer.includes(:favorited_products).sort {|a,b| b.favorited_products.size <=> a.favorited_products.size}
+    #@customer = @product.customer
   end
 
   def show

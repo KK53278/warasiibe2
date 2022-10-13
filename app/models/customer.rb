@@ -7,6 +7,7 @@ class Customer < ApplicationRecord
   has_many :post_images, dependent: :destroy
   has_many :products
   has_many :favorites, dependent: :destroy
+  has_many :favorited_products, through: :favorites, source: :product
   has_many :comments, dependent: :destroy
   has_one_attached :image
   has_one_attached :profile_image
