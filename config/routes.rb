@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
   namespace :public do
+    get 'reserve/new'
+    get 'reserve/confirm'
+    get 'reserve/complete'
+  end
+  namespace :public do
     get 'searches/search'
   end
   namespace :public do
@@ -14,9 +19,15 @@ Rails.application.routes.draw do
   namespace :public do
     get 'products/show'
     get 'products/index'
+      #配送依頼フォーム
+    get 'reserve/new' # 入力画面
+    post 'reserve/confirm' # 確認画面
+    post 'reserve/back' # 確認画面から「入力画面に戻る」をクリックしたとき
+    post 'reserve/complete' # 完了画面
   end
-  get 'homes/top'
-  get 'homes/about'
+    get 'homes/top'
+    get 'homes/about'
+
   devise_for :customers, skip: [:passwords], controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'

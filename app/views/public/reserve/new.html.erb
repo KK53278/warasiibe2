@@ -1,0 +1,22 @@
+<h1>配送依頼フォーム</h1>
+
+<ol class="nav">
+	<li class="current">1.入力</li>
+	<li>2.確認</li>
+	<li>3.完了</li>
+</ol>
+
+<%= form_for @reserve, method: :post, url: public_reserve_confirm_path do |form| %>
+	<dl>
+		<dt>郵便番号</dt>
+		<dd><%= form.text_field :zip %></dd>
+		<dt>住所</dt>
+		<dd><%= form.text_field :adress %></dd>
+		<dt>名前（漢字フルネーム）</dt>
+		<dd><%= form.text_field :name %></dd>
+		<dt>備考</dt>
+		<dd><%= form.text_field :note %></dd>
+	</dl>
+
+	<%= form.submit '確認画面へ' %>
+<% end %>

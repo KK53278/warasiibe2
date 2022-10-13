@@ -4,7 +4,7 @@
     <div class='col-md-3'>
       <!--ユーザープロフィールを呼び出す-->
       <%= render 'public/customers/info', customer: @customer %>
-      
+
       <h4 class="mt-3">商品を投稿</h4>
       <%= render 'form', product: @product %>
     </div>
@@ -48,6 +48,12 @@
                 <% end %>
               </td>
             <% end %>
+              <!--配送依頼フォームへのリンク-->
+              <td>
+                <%= link_to public_reserve_new_path(@product), class: "btn btn-sm btn-danger" do %>
+                  配送依頼
+                <% end %>
+              </td>
           </tr>
         </table>
 
