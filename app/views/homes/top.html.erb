@@ -1,9 +1,19 @@
-<br>
-<br>
-    <h1 style="text-align:center">ようこそ、ワラシベ長者へ</h1>
-    <br>
-    <h4 style="text-align:center">モノの譲り合いで暮らしを豊かに</h4>
-    <h4 style="text-align:center">持続可能な未来へ</h4>
+<div class="bg_test">
+    <div class="bg_test-text">
+        <h3>ようこそ、ワラシベ長者へ</h3><br>
+        <h4>モノの譲り合いで暮らしを豊かに</h4><br>
+        <h4>持続可能な未来へ</h4><br>
 
-    <%= link_to '会員の方',new_customer_session_path %>
-    <%= link_to '新規登録はこちら',new_customer_registration_path %>
+      <%= link_to new_customer_session_path, class: 'button' do %>
+        <span>会員の方</span>
+      <% end %>
+      <%= link_to new_customer_registration_path, class: 'button' do %>
+        <span>さっそく始める</span>
+      <% end %>
+      <%= link_to admin_session_path, class: 'button' do %>
+        <span>管理者の方はこちら</span>
+      <% end %>
+
+    </div>
+</div>
+

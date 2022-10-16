@@ -1,3 +1,54 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.bg_test-text {
+    border:  solid 1px;                             /* 枠線指定 */
+    display:  inline-block;                         /* インラインブロックにする */
+    padding: 10px 20px;                             /* 余白指定 */
+    background-color: rgba(255, 255, 255, 0.7);     /* 背景色指定 */
+}
+.bg_test {
+    text-align:  center;    /* 文字中央寄せ */
+    height: 80vh;
+    padding:  150px;        /* 余白指定 */
+    background-image: image-url('top_image.jpg');    /* 背景画像指定 */
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat:  no-repeat;
+}
+.button,
+.button span {
+  position: relative;
+  display: inline-block;
+}
+.button span {
+  padding: .65em 4em;
+  background: linear-gradient(#5E90B3 , #AEB1B2);
+  border: 1px solid #00547A;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  transition: .3s ease-in-out;
+}
+.button::after {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  z-index: -1;
+  content: '';
+  width: 100%;
+  height: 24px;
+  background-color: rgba(0,0,0,.1);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  transition: .3s ease-in-out;
+}
+.button:hover span {
+  transform: translateY(-10px);
+}
+.button:hover::after {
+  width: 70%;
+  height: 18px;
+}
+

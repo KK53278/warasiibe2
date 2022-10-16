@@ -32,4 +32,8 @@ class Product < ApplicationRecord
       @product = Product.all
     end
   end
+  # いいねランキング
+  def self.create_all_ranks
+    Product.find(Favorite.group(:product_id).order('count(product_id) desc').limit(3).pluck(:product_id))
+  end
 end

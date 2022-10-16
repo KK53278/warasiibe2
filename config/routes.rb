@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'products/index'
+    get 'products/show'
+  end
   namespace :public do
     get 'reserve/new'
     get 'reserve/confirm'
@@ -36,6 +40,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :customers, only: [:index, :show, :edit, :update]
+    resources :products, only: [:index, :show]
   end
 
   devise_for :admin, skip: [:registrations, :passwords], controllers: {

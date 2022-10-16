@@ -1,6 +1,6 @@
 <h2>フォローしているユーザー</h2>
 <% if @customers.exists? %>
-  <%= @customers.name %>
+  <%= render 'public/customers/index', customers: @customers %>
 <% else %>
   <p>ユーザーはいません</p>
 <% end %>

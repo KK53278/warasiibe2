@@ -1,0 +1,28 @@
+<table class='table'>
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% customers.each do |customer| %>
+      <tr>
+        <td><%= image_tag customer.get_profile_image(50,50) %></td>
+        <td><%= customer.name %></td>
+        <td>フォロー数: <%= customer.followings.count %></td>
+        <td>フォロワー数: <%= customer.followers.count %></td>
+        <td>
+        <% if current_customer.following?(customer) %>
+          <%= link_to "フォロー外す", public_customer_relationships_path(customer.id), method: :delete %>
+        <% else %>
+          <%= link_to "フォローする", public_customer_relationships_path(customer.id), method: :post %>
+        <% end %>
+        </td>
+        <!--フォローする場所-->
+        <td><%= link_to 'Show', public_customer_path(customer.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

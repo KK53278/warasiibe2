@@ -3,17 +3,14 @@
 
     <div class='col-md-3'>
     <h2>いいねが多い商品</h2>
-    <ul class="list-group">
-      <li class="list-group-item">
-        <i class="fa-solid fa-crown"></i>
-        <i class="fa-solid fa-crown"></i>
-        <i class="fa-solid fa-crown"></i>
-        <% @products.each do |product| %>
-        <% if product.images.attached? %>
-          <%= image_tag product.images.first, size: "50x50" %>
-        <% else %>
-          <%= image_tag 'no_image.jpg', size: "50x50" %>
-        <% end %>
+
+        <% @all_ranks.each.with_index(1) do |product, i| %>
+          <i class="fa-solid fa-crown"></i>第<%= i %>位
+          <% if product.images.attached? %>
+            <%= image_tag product.images.first, size: "50x50" %>
+          <% else %>
+            <%= image_tag 'no_image.jpg', size: "50x50" %>
+          <% end %>
           <%= link_to product.product_name, public_product_path(product.id) %><br>
         <% end %>
 
