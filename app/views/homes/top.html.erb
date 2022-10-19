@@ -1,19 +1,21 @@
-<div class="bg_test">
-    <div class="bg_test-text">
-        <h3>ようこそ、ワラシベ長者へ</h3><br>
-        <h4>モノの譲り合いで暮らしを豊かに</h4><br>
-        <h4>持続可能な未来へ</h4><br>
+<div class="haikei">
+    <h1>モノの譲り合いで暮らしを豊かに</h1>
+    <h2>あなたが使わなくなった物は、誰かにとって特別なモノ。</h2>
+    <h2>まだまだ輝ける未来が待っています。</h2>
+    <h2>お世話になった感謝のしるしとして、新たな旅路へ送り届けましょう。</h2>
+    <h2>断捨離は終わり、譲り合いは始まり。</h2>
 
-      <%= link_to new_customer_session_path, class: 'button' do %>
-        <span>会員の方</span>
-      <% end %>
-      <%= link_to new_customer_registration_path, class: 'button' do %>
+    <button class="btn-80">
+      <%= link_to new_customer_registration_path do %>
         <span>さっそく始める</span>
       <% end %>
-      <%= link_to admin_session_path, class: 'button' do %>
-        <span>管理者の方はこちら</span>
-      <% end %>
+    </button>
 
-    </div>
+    <p>
+      <%= link_to admin_session_path, class: 'start' do %>
+        管理者の方はこちら
+      <% end %>
+    </p>
+
 </div>
 

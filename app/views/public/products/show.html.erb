@@ -34,7 +34,8 @@
               </h5>
             </td>
             <td><%= @product.caption %></td>
-
+            <td>投稿日 : <%= @product.created_at.strftime('%Y/%m/%d') %></td>
+            <td>更新日 : <%= @product.updated_at.strftime('%Y/%m/%d') %></td>
             <td><%= render "public/favorites/btn", product: @product %></td>
             <% if @product.customer == current_customer %>
               <td>

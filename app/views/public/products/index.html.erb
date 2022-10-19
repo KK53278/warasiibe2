@@ -2,20 +2,21 @@
     <div class='row'>
 
     <div class='col-md-3'>
-    <h2>いいねが多い商品</h2>
 
-        <% @all_ranks.each.with_index(1) do |product, i| %>
-          <i class="fa-solid fa-crown"></i>第<%= i %>位
+    <div class='ranking'>
+    <h4>現在人気の商品</h4>
+          <% @all_ranks.each.with_index(1) do |product, i| %>
+          <i class="fa-solid fa-crown"></i> <%= i %>位
           <% if product.images.attached? %>
             <%= image_tag product.images.first, size: "50x50" %>
           <% else %>
             <%= image_tag 'no_image.jpg', size: "50x50" %>
           <% end %>
-          <%= link_to product.product_name, public_product_path(product.id) %><br>
-        <% end %>
+            <%= link_to product.product_name, public_product_path(product.id) %>
+            <%= render "public/favorites/btn", product: product %>
 
-      </li>
-    </ul>
+            <% end %>
+    </div>
     </div>
 
       <div class="col-md-8 offset-md-1">

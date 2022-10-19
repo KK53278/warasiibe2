@@ -1,56 +1,221 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.bg_test-text {
-    border:  solid 1px;                             /* 枠線指定 */
-    display:  inline-block;                         /* インラインブロックにする */
-    padding: 10px 20px;                             /* 余白指定 */
-    background-color: rgba(255, 255, 255, 0.7);     /* 背景色指定 */
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap');
+.haikei-text {
+  display:  inline-block;
+  padding: 10px 20px;
+  font-family: 'Kiwi Maru', serif;
 }
-.bg_test {
-    text-align:  center;    /* 文字中央寄せ */
-    height: 80vh;
-    padding:  150px;        /* 余白指定 */
-    background-image: image-url('top_image.jpg');    /* 背景画像指定 */
-    background-size: cover;
-    background-position: bottom center;
-    background-repeat:  no-repeat;
-}
-.button,
-.button span {
+
+.haikei {
+  text-align:  center;
+  height: 80vh;
+  padding:  150px;
+  background-image: image-url('top_image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat:  no-repeat;
   position: relative;
-  display: inline-block;
+  z-index: 1;
 }
-.button span {
-  padding: .65em 4em;
-  background: linear-gradient(#5E90B3 , #AEB1B2);
-  border: 1px solid #00547A;
-  border-radius: 4px;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  transition: .3s ease-in-out;
-}
-.button::after {
+
+.haikei::after{
+  content: "";
   position: absolute;
-  bottom: -15px;
-  left: 50%;
-  z-index: -1;
-  content: '';
+  z-index: 2;
   width: 100%;
-  height: 24px;
-  background-color: rgba(0,0,0,.1);
-  border-radius: 50%;
-  transform: translateX(-50%);
-  transition: .3s ease-in-out;
+  height:100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0.4;
 }
-.button:hover span {
-  transform: translateY(-10px);
+
+.haikei>h1{
+  font-size: 70px;
+  position: relative;
+  z-index: 3;
+  font-family: 'Kiwi Maru', serif;
 }
-.button:hover::after {
-  width: 70%;
-  height: 18px;
+
+.haikei>h2{
+  font-size: 30px;
+  position: relative;
+  z-index: 3;
+  font-family: 'Kiwi Maru', serif;
+}
+
+.btn-80,
+.btn-80 *,
+.btn-80 :after,
+.btn-80 :before,
+.btn-80:after,
+.btn-80:before {
+  border: 0 solid;
+  box-sizing: border-box;
+
+}
+.btn-80 {
+  position: relative;
+  z-index: 3;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #3CB371;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+
+.btn-80:disabled {
+  cursor: default;
+}
+.btn-80:-moz-focusring {
+  outline: auto;
+}
+.btn-80 svg {
+  display: block;
+  vertical-align: middle;
+}
+.btn-80 [hidden] {
+  display: none;
+}
+.btn-80 {
+  border: 2px solid;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: 'Kiwi Maru', serif;
 }
 
 
+.btn-80 span {
+  font-weight: 900;
+  mix-blend-mode: difference;
+}
+.btn-80:before {
+  background: #fff;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.btn-80:hover:before {
+  -webkit-animation: progress-bar 1.2s;
+  animation: progress-bar 1.2s;
+}
+
+
+@-webkit-keyframes progress-bar {
+  0% {
+    opacity: 1;
+    width: 0;
+  }
+  10% {
+    opacity: 1;
+    width: 15%;
+  }
+  25% {
+    opacity: 1;
+    width: 25%;
+  }
+  40% {
+    opacity: 1;
+    width: 35%;
+  }
+  55% {
+    opacity: 1;
+    width: 75%;
+  }
+  60% {
+    opacity: 1;
+    width: 100%;
+  }
+  to {
+    opacity: 0;
+    width: 100%;
+  }
+}
+
+
+.p{
+  font-size: 20px;
+  position: relative;
+  z-index: 4;
+}
+
+// aboutページ
+
+.abhaikei-text {
+  display:  inline-block;
+  padding: 10px 20px;
+  font-family: 'Kiwi Maru', serif;
+}
+
+.abhaikei {
+  text-align:  center;
+  height: 80vh;
+  padding:  150px;
+  background-image: image-url('about_childs.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat:  no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+.abhaikei::after{
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height:100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0.4;
+}
+
+.abhaikei>h1{
+  font-size: 70px;
+  position: relative;
+  z-index: 3;
+  font-family: 'Kiwi Maru', serif;
+}
+
+.abhaikei>h2{
+  font-size: 30px;
+  position: relative;
+  z-index: 3;
+  font-family: 'Kiwi Maru', serif;
+}
+
+.container{
+  font-family: 'Kiwi Maru', serif;
+  text-align: center;
+  padding: 30px;
+}
+
+.card-body{
+  font-family: 'Kiwi Maru', serif;
+}
 
