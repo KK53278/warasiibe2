@@ -4,8 +4,10 @@ class Public::CommentsController < ApplicationController
     product = Product.find(params[:product_id])
     comment = current_customer.comments.new(comment_params)
     comment.product_id = product.id
-    comment.save
-    redirect_to public_product_path(product)
+    if comment.save
+      product.create_notification_comment!(current_customer, comment.id)
+      redirect_to public_product_path(product)
+    end
   end
 
   def destroy

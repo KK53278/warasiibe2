@@ -1,0 +1,16 @@
+<div class="container all">
+  <div class="row">
+    <div class="col-xs-12 col-ms-12 col-md-12 col-lg-12">
+      <% notifications = @notifications.includes(:visitor).includes(:visited).where.not(visitor_id: current_customer.id) %>
+      <!--logとroomの記述削除-->
+      <% if notifications.exists? %>
+        <%= render 'notification', notifications: @notifications %>
+        <div class="d-flex justify-content-center">
+          <p><%= paginate @notifications %></p>
+        </div>
+      <% else %>
+        <p>通知はありません</p>
+      <% end %>
+    </div>
+  </div>
+</div>

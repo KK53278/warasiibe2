@@ -1,0 +1,27 @@
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-xs-3 offset-sm-3 offset-md-3 offset-lg-3 mx-auto">
+  <table class="table table-border-bottom form-inline">
+    <tbody>
+        <% notifications.each do |notification| %>
+        <% visitor = notification.visitor %>
+        <% visited = notification.visited %>
+      <tr>
+        <td>
+          <%= link_to public_customer_path(visitor), class: "text-dark" do %><strong><%= visitor.name %>さん</strong>が<% end %>
+          <% case notification.action %>
+          <% when 'follow' then %>
+            <%= "あなたをフォローしました" %>
+          <% when  'favorite' then %>
+            <%= link_to 'あなたの投稿', public_product_path(notification.product), class: "text-dark", style: "font-weight: bold;" %><%= "にいいねしました" %>
+          <% when 'comment' then %>
+              <%= link_to "あなたの投稿", public_product_path(notification.product), class: "text-dark", style: "font-weight: bold;" %>
+            <span>
+              <%= "にコメントしました" %>
+            </span>
+          <% end %>
+          <small class="text-right text-muted"><%= time_ago_in_words(notification.created_at).upcase %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

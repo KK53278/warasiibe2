@@ -11,8 +11,12 @@ class Customer < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_one_attached :image
   has_one_attached :profile_image
+  
+  # 通知した、されたの関係
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
-    # フォローをした、されたの関係
+  # フォローをした、されたの関係
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
 
@@ -53,6 +57,17 @@ class Customer < ApplicationRecord
       @customer = Customer.where("name LIKE?","%#{word}%")
     else
       @customer = Customer.all
+    end
+  end
+  
+  def create_notification_follow!(current_customer)
+    temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ",current_customer.id, id, 'follow'])
+    if temp.blank?
+      notification = current_customer.active_notifications.new(
+        visited_id: id,
+        action: 'follow'
+      )
+      notification.save if notification.valid?
     end
   end
 
