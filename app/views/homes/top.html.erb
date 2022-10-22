@@ -5,17 +5,11 @@
     <h2>お世話になった感謝のしるしとして、新たな旅路へ送り届けましょう。</h2>
     <h2>断捨離は終わり、譲り合いは始まり。</h2>
 
-    <button class="btn-80">
-      <%= link_to new_customer_registration_path do %>
-        <span>さっそく始める</span>
-      <% end %>
-    </button>
 
-    <p>
-      <%= link_to admin_session_path, class: 'start' do %>
-        管理者の方はこちら
-      <% end %>
-    </p>
+      <%= link_to " さっそく始める", new_customer_registration_path, class: "btn-80" %>
+
+      <%= link_to "管理者の方はこちら", admin_session_path, class: "admin-button" %>
+
 
 </div>
 
