@@ -63,3 +63,5 @@ gem 'net-smtp'
 gem 'jquery-rails'
 
 gem 'kaminari'
+
+gem 'rename'
