@@ -6,6 +6,9 @@ class Product < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
+  validates :product_name, presence: true
+  validates :caption, presence: true
+
   def get_images
     unless images.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')

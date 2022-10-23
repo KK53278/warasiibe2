@@ -1,3 +1,27 @@
 // Place all the styles related to the public/customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.card-body{
+  box-shadow: 2px 2px 6px rgba(0,0,0,.4);
+  margin-top: 30px;
+  position: relative;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+}
+
+.toukou{
+  width: 60%;
+  margin: 10% auto;
+  min-width: 9rem;
+  margin-top: 5rem !important;
+  margin-left: 1rem;
+}
+
+main{
+  height: 79vh;
+}
+

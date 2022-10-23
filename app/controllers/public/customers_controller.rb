@@ -4,7 +4,7 @@ class Public::CustomersController < ApplicationController
   def show
     @customer = Customer.find(params[:id])
     @product = Product.new
-    @products = @customer.products
+    @products = @customer.products.page(params[:page]).per(3)
   end
 
   def edit
