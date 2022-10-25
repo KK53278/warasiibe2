@@ -1,24 +1,34 @@
-# README
+# warasiibe
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+### サイトテーマ
+断捨離したいけど捨てられないものを無料(配送料自己負担）で欲しい人に譲り合うSNSサイト
 
-Things you may want to cover:
+### テーマを選んだ理由
+- フリマアプリ(メルカリ)を使用して、細かいやり取りが面倒くさいと感じた為
+- ノンブランドのものや傷があるものは売れにくい為
+- 断捨離はしたいが捨てるのはもったいないと感じた為
+- サステナビリティをもっと世に普及したい為
+- 1歳、2歳の子持ちの姉が「自分のものを買う余裕がない」と言っていたのを聞き、
+ 自分の思い出のものが誰かの手に渡って役に立てばいいと感じたため
 
-* Ruby version
+### ターゲットユーザ
+- (譲りたい側)ミニマリスト、家を退去する人
+- (貰いたい人)学生、10代～20代のママ、これから一人暮らしをする人、倹約家
 
-* System dependencies
+### 主な利用シーン
+欲しいアイテムを検索して、DMで住所を送ったら着払いで受け取ることができる
 
-* Configuration
+## 設計書
+...
 
-* Database creation
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
