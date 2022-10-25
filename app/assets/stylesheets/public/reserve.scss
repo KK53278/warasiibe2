@@ -1,3 +1,25 @@
 // Place all the styles related to the public/reserve controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.nav>li {
+  padding-left: 18px;
+  margin-bottom: 0;
+  list-style: none;
+  font-size: 33px;
+  font-family: 'Kiwi Maru', serif;
+}
+
+.d1{
+  font-size: 33px;
+  font-family: 'Kiwi Maru', serif;
+}
+
+.current{
+  color: #ff7f50;
+  font-family: 'Kiwi Maru', serif;
+}
+
+.dt{
+    font-family: 'Kiwi Maru', serif;
+}

@@ -16,9 +16,7 @@
 
 .button,:hover {
   text-decoration: none;
-
   color: #333;
-
 }
 
 header {
@@ -36,7 +34,8 @@ header .headline {
   font-weight: bold;
   position: relative;
   margin: 0;
-  -webkit-text-stroke:1px #000;
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
 }
 
 header .button{
@@ -50,10 +49,12 @@ header .button{
   font-weight: 400;
   text-decoration: none;
   text-align: center;
+  font-family: 'Kiwi Maru', serif;
 }
 
 body {
   background-color: #FEF5E7;
+  font-size: medium;
 }
 
 footer {
@@ -61,14 +62,13 @@ footer {
   height: 50px;
   text-align: center;
   line-height: 50px;
-  background-color: #EDBB99 ;
   bottom: 0;
   position: sticky;
   top: 100vh;
 }
 
 .footer-text {
-  color: #fff;
+  color: #EDBB99;
 }
 
 
@@ -105,7 +105,7 @@ body {
     0 19.2px 19.8px rgba(0, 0, 0, 0.092),
     0 38.4px 34.8px rgba(0, 0, 0, 0.1),
     0 101px 74px rgba(0, 0, 0, 0.13);
-  font-size: 20px;
+  font-size: 17px;
 }
 
 h1 {
@@ -129,7 +129,7 @@ form {
   color: #666;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
-  height: 50px;
+  height: 40px;
   transition: border-color 0.3s;
   width: 100%;
 }
@@ -194,3 +194,6 @@ form {
   border-radius: 15px;    /*角を丸くする*/
 }
 
+.h6{
+  font-size: 16px;
+}

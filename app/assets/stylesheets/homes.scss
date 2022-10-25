@@ -210,6 +210,7 @@
   position: relative;
   z-index: 3;
   font-family: 'Kiwi Maru', serif;
+  margin-top: -100px;
 }
 
 .abhaikei>h2{
@@ -225,10 +226,34 @@
   padding: 30px;
 }
 
-.card-body{
-  font-family: 'Kiwi Maru', serif;
+.tokucho{
+  font-size: 50px;
 }
 
+.card-body{
+  font-family: 'Kiwi Maru', serif;
+  box-shadow: 2px 2px 6px rgba(0,0,0,.4);
+  margin-top: 10px;
+  position: relative;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+  margin: 0 auto;
+  width: 72%;
+  padding: 0 1.5em;
+}
+
+.card-title{
+  font-size: 30px;
+  text-align: center;
+}
+
+.card-text{
+  font-size: 20px;
+}
 
 .admin-button {
   position: absolute;

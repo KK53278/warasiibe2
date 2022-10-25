@@ -6,9 +6,9 @@
     <h6>商品画像</h6>
       <%= f.file_field :images, multiple: true, accept: "image/*" %>
     <h6>商品名</h6>
-      <%= f.text_field :product_name %>
+      <%= f.text_field :product_name, placeholder: "" %>
     <h6>商品説明</h6>
-      <%= f.text_area :caption %>
+      <%= f.text_area :caption, placeholder: "" %>
 
     <%= f.submit '投稿' %>
     <% end %>
