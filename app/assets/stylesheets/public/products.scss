@@ -14,3 +14,49 @@
   margin-top: 50px;
 }
 
+.ranking h4{
+  font-size: 26px;
+}
+
+.card-body{
+  font-family: 'Kiwi Maru', serif;
+  box-shadow: 2px 2px 6px rgba(0,0,0,.4);
+  margin-top: 10px;
+  position: relative;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+  margin: 0 auto;
+  width: 70%;
+  padding: 0 1.5em;
+  height: 180px;
+  margin-bottom: 20%;
+}
+
+.card-body h6{
+  font-size: 14px;
+}
+
+.container {
+    font-family: 'Kiwi Maru', serif;
+}
+
+.table>tbody>tr>td{
+  font-size: 16px;
+}
+
+.navi {
+  padding-left: 18px;
+  margin-bottom: 0;
+  list-style: none;
+  font-size: 33px;
+  font-family: 'Kiwi Maru', serif;
+  align-content: center;
+  display: inline-flex;
+  li {
+    margin: 10px;
+  }
+}

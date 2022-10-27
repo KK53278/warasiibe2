@@ -6,16 +6,19 @@
     <div class='ranking'>
     <h4>現在人気の商品</h4>
           <% @all_ranks.each.with_index(1) do |product, i| %>
+
+        <div>
           <i class="fa-solid fa-crown"></i> <%= i %>位
           <% if product.images.attached? %>
             <%= image_tag product.images.first, size: "50x50" %>
           <% else %>
             <%= image_tag 'no_image.jpg', size: "50x50" %>
           <% end %>
+        </div>
             <%= link_to product.product_name, public_product_path(product.id) %>
             <%= render "public/favorites/btn", product: product %>
 
-            <% end %>
+          <% end %>
     </div>
     </div>
 
@@ -30,9 +33,9 @@
           <tr>
             <td>
               <% if product.images.attached? %>
-                <%= image_tag product.images.first, size: "100x100" %>
+                <%= image_tag product.images.first, size: "60x60" %>
               <% else %>
-                <%= image_tag 'no_image.jpg' %>
+                <%= image_tag 'no_image.jpg', size: "60x60" %>
               <% end %>
             </td>
             <td><%= link_to product.product_name, public_product_path(product.id) %></td>

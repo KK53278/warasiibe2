@@ -7,16 +7,16 @@ before_action :ensure_correct_customer, { only: [:edit, :update, :destroy] }
     @product.customer_id = current_customer.id
     @customer = current_customer
     if @product.save
-      @products = @customer.products.page(params[:page]).per(4)
+      @products = @customer.products.page(params[:page]).per(5)
       redirect_to public_customer_path(@customer)
     else
-      @products = @customer.products.page(params[:page]).per(3)
+      @products = @customer.products.page(params[:page]).per(5)
       render 'public/customers/show'
     end
   end
 
   def index
-    @products = Product.all.page(params[:page]).per(3)
+    @products = Product.all.page(params[:page]).per(5)
     @all_ranks = Product.create_all_ranks
   end
 
