@@ -25,5 +25,6 @@ class Public::ReserveController < ApplicationController
 
   def permit_params
 		@attr = params.require('reserve').permit(:id, :zip, :adress, :name, :note)
-	end
+  end
+
 end

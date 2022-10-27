@@ -56,7 +56,7 @@
               <% else %>
               <!--出品者以外には配送依頼フォームを表示-->
               <td>
-                <%= link_to public_reserve_new_path(@product), class: "btn btn-sm btn-primary" do %>
+                <%= link_to new_public_reserve_path(@product), class: "btn btn-sm btn-primary" do %>
                   配送依頼
                 <% end %>
               </td>
