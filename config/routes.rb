@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get 'customers/index'
+  end
+  namespace :admin do
     get 'products/index'
     get 'products/show'
   end

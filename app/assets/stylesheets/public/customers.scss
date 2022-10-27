@@ -1,6 +1,16 @@
 // Place all the styles related to the public/customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.card-title{
+  font-size: 23px;
+  text-align: center;
+  padding: 5px 10px 15px 20px;
+}
+
+.card-text{
+  font-size: 18px;
+}
+
 .card-body{
   box-shadow: 2px 2px 6px rgba(0,0,0,.4);
   margin-top: 30px;

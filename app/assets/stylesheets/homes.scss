@@ -227,10 +227,10 @@
 }
 
 .tokucho{
-  font-size: 50px;
+  font-size: 58px;
 }
 
-.card-body{
+.aboutcard-body{
   font-family: 'Kiwi Maru', serif;
   box-shadow: 2px 2px 6px rgba(0,0,0,.4);
   margin-top: 10px;
@@ -242,13 +242,16 @@
   background-clip: border-box;
   border-radius: 0.25rem;
   margin: 0 auto;
-  width: 72%;
+  width: 65%;
   padding: 0 1.5em;
+  height: 413px;
+  margin-bottom: 20%;
 }
 
 .card-title{
   font-size: 30px;
   text-align: center;
+  padding: 5px 10px 15px 20px;
 }
 
 .card-text{
@@ -257,7 +260,9 @@
 
 .admin-button {
   position: absolute;
-  bottom: 10px;
-  right: 600px;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  margin: auto;
   z-index: 3;
 }

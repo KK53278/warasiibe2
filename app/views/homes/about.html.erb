@@ -1,4 +1,7 @@
-<div class="abhaikei">
+<div>
+<about-head>
+ <div class="abhaikei">
+
   <h1>譲り合いで輝ける未来へ</h1>
   <h2>あなたの不要になった物は、誰かにとって特別なモノ。</h2>
   <h2>使わなくなった物には、まだ輝ける未来が待っています。</h2>
@@ -8,8 +11,10 @@
 
       <%= link_to " さっそく始める", new_customer_registration_path, class: "btn-80" %>
 
-</div>
+ </div>
+</about-head>
 
+<about-body>
   <div class="container">
       <h1 class="tokucho">
         warasiibeの特徴
@@ -19,26 +24,29 @@
   <div class="row">
 
     <div class="col-xs-6 col-lg-4">
-        <div class="card-body">
+        <div class="aboutcard-body">
           <h5 class="card-title">すべての商品が無料</h5>
           <p class="card-text">配送料のみの負担で欲しいものを譲り受けることができます。気軽に物々交換を楽しんでください。</p>
-          <img src="/assets/about_car.jpg" alt="" width="220" height="210" />
+          <img src="/assets/about_car.jpg" alt="" width="230" height="190" style="display: block; margin: auto;" />
         </div>
     </div>
 
     <div class="col-xs-6 col-lg-4">
-        <div class="card-body">
+        <div class="aboutcard-body">
           <h5 class="card-title">面倒くさいやり取りは不要</h5>
           <p class="card-text">譲る方は(出品、着払いで配送)　受け取る方は(探す、気に入った商品に配送依頼を送る)の2ステップのみです。</p>
-          <img src="/assets/about_people.jpg" alt="" width="200" height="180" />
+          <img src="/assets/about_people.jpg" alt="" width="200" height="180" style="display: block; margin: auto;" />
         </div>
     </div>
 
     <div class="col-xs-12 col-lg-4">
-        <div class="card-body">
+        <div class="aboutcard-body">
           <h5 class="card-title">サステナブルな未来づくり</h5>
           <p class="card-text">ワラシベ長者は持続可能な社会を目指し、大切な地球を守ることに貢献します。資源を使いまわすことはその一歩です。</p>
-          <img src="/assets/about_heart.jpg" alt="" width="180" height="160" />
+          <img src="/assets/about_heart.jpg" alt="" width="160" height="140" style="display: block; margin: auto;" />
         </div>
     </div>
+
+  </div>
+</about-body>
 </div>

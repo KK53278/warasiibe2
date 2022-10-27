@@ -7,6 +7,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <!--kaminari-->
@@ -23,10 +24,10 @@
     <% if admin_signed_in? %>
     <header>
       <%= link_to admin_products_path, class: 'headline' do %>
-        warasiibe
+        waras<span>ii</span>be
       <% end %>
 
-      <%= link_to admin_products_path, class: 'button' do %>
+      <%= link_to admin_customers_path, class: 'button' do %>
         会員一覧
       <% end %>
 
@@ -42,7 +43,7 @@
     <% elsif customer_signed_in? %>
     <header>
       <%= link_to public_customer_path(current_customer), class: 'headline' do %>
-        warasiibe
+        waras<span>ii</span>be
       <% end %>
 
       <%= link_to public_notifications_path, class: 'button' do %>
@@ -61,7 +62,7 @@
     <% else %>
     <header>
       <%= link_to root_path, class: 'headline' do %>
-        warasiibe
+        waras<span>ii</span>be
       <% end %>
 
       <%= link_to homes_about_path, class: 'button' do %>
@@ -78,13 +79,15 @@
     </header>
     <% end %>
 
-    <main>
     <%= yield %>
-    </main>
 
-    <footer>
+
+    <footer class="footer">
     <p class="footer-text">© All rights reserved by warasiibe</p>
     </footer>
 
   </body>
+
+
+
 </html>

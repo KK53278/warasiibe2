@@ -1,2 +1,170 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+.button,:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+header {
+  width: 100%;
+  padding: 10px 0;
+  margin: 0px auto 0;
+  text-align: center;
+  background-color: #16A085;
+}
+
+header .headline {
+  font-size: 72px;
+  color: #FBFCFC;
+  padding: 10px;
+  font-weight: bold;
+  position: relative;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
+  left: -200px
+}
+
+header .headline>span{
+  color: #FFFFCC;
+}
+
+header .button{
+  display: inline-block;
+  padding: .2em 2.5em;
+  border: 2px solid #333;
+  border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
+  color: #333;
+  background-color: #D6EAF8;
+  font-weight: 400;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Kiwi Maru', serif;
+  font-size: 18px;
+  margin: 10px;
+}
+
+body * a{
+  font-size: 20px;
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  bottom: 0;
+  position: sticky;
+  top: 100vh;
+}
+
+.footer-text {
+  color: #EDBB99;
+}
+
+/* Form Layout */
+.form-wrapper {
+  background: #fafafa;
+  margin: 4em auto;
+  padding: 0 1em;
+  max-width: 380px;
+  box-shadow:
+    0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+    0 5px 6.1px rgba(0, 0, 0, 0.076),
+    0 10.1px 11.4px rgba(0, 0, 0, 0.086),
+    0 19.2px 19.8px rgba(0, 0, 0, 0.092),
+    0 38.4px 34.8px rgba(0, 0, 0, 0.1),
+    0 101px 74px rgba(0, 0, 0, 0.13);
+  font-size: 17px;
+}
+
+h1 {
+  text-align: center;
+  padding: 1em 0;
+}
+
+form {
+  padding: 0 1.5em;
+}
+
+.form-item {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+.form-item input {
+  background: #fafafa;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  color: #666;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  height: 40px;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+.form-item input:focus {
+  border-bottom: 2px solid #c0c0c0;
+  outline: none;
+}
+
+.button-panel {
+  margin: 2em 0 0;
+  width: 100%;
+}
+
+.button-panel .button {
+  background: #9ACD32;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+
+
+.form-footer {
+  font-size: 1em;
+  padding: 2em 0;
+  text-align: center;
+}
+
+.form-footer a {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+.form-footer a:hover {
+  border-bottom: 1px dotted #8c8c8c;
+}
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {
+  border: none!important;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 15px;    /*角を丸くする*/
+}
+
+.h6{
+  font-size: 16px;
+}
