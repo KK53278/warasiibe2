@@ -1,54 +1,52 @@
   <div class='container px-5 px-sm-0'>
     <div class='row'>
+      <div class='col-md-3'>
 
-    <div class='col-md-3'>
+        <div class='ranking'>
+        <h4>現在人気の商品</h4>
+            <% @all_ranks.each.with_index(1) do |product, i| %>
 
-    <div class='ranking'>
-    <h4>現在人気の商品</h4>
-          <% @all_ranks.each.with_index(1) do |product, i| %>
+            <div>
+              <i class="fa-solid fa-crown"></i> <%= i %>位
+              <% if product.images.attached? %>
+                <%= image_tag product.images.first, size: "50x50" %>
+              <% else %>
+                <%= image_tag 'no_image.jpg', size: "50x50" %>
+              <% end %>
+            </div>
 
-        <div>
-          <i class="fa-solid fa-crown"></i> <%= i %>位
-          <% if product.images.attached? %>
-            <%= image_tag product.images.first, size: "50x50" %>
-          <% else %>
-            <%= image_tag 'no_image.jpg', size: "50x50" %>
-          <% end %>
+                <%= link_to product.product_name, public_product_path(product.id) %>
+                <%= render "public/favorites/btn", product: product %>
+            <% end %>
         </div>
-            <%= link_to product.product_name, public_product_path(product.id) %>
-            <%= render "public/favorites/btn", product: product %>
 
-          <% end %>
-    </div>
-    </div>
+      </div>
 
       <div class="col-md-8 offset-md-1">
         <h2>キーワードから探す</h2>
           <table class="table table-hover table-inverse">
           <!--検索フォーム-->
           <div style="text-align:center"><%= render 'public/searches/form', customer: @customer %></div>
-          <tbody>
-          <h2>一覧から探す</h2>
-          <% @products.each do |product| %>
-          <tr>
-            <td>
-              <% if product.images.attached? %>
-                <%= image_tag product.images.first, size: "60x60" %>
-              <% else %>
-                <%= image_tag 'no_image.jpg', size: "60x60" %>
+            <tbody>
+            <h2>一覧から探す</h2>
+              <% @products.each do |product| %>
+                <tr>
+                  <td>
+                    <% if product.images.attached? %>
+                      <%= image_tag product.images.first, size: "60x60" %>
+                    <% else %>
+                      <%= image_tag 'no_image.jpg', size: "60x60" %>
+                    <% end %>
+                  </td>
+
+                  <td><%= link_to product.product_name, public_product_path(product.id) %></td>
+                  <td><%= product.caption %></td>
+                  <td class="favorite-<%= product.id%>"><%= render "public/favorites/btn", product: product %></td>
+                </tr>
               <% end %>
-            </td>
-            <td><%= link_to product.product_name, public_product_path(product.id) %></td>
-            <td><%= product.caption %></td>
-            <td class="favorite-<%= product.id%>"><%= render "public/favorites/btn", product: product %></td>
-          </tr>
-          <% end %>
-          </tbody>
-        </table>
-
-
-
-  </div>
-  </div>
+            </tbody>
+          </table>
+      </div>
+    </div>
   <%= paginate @products %>
 </div>

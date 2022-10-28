@@ -6,7 +6,7 @@
     <%= render "public/shared/error_messages", resource: resource %>
 
     <div class="form-item">
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ユーザー名" %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ユーザー名" %>
     </div>
 
     <div class="form-item">
@@ -23,7 +23,7 @@
 
 
     <div class="button-panel">
-     <%= f.submit "Sign in", class: "button" %>
+      <%= f.submit "Sign in", class: "button" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
@@ -36,7 +36,6 @@
       <div class="form-footer">
       <p><a href="#"><%= render "public/shared/links" %></a></p>
       </div>
-      <% end %>
-
+    <% end %>
 
 </div>

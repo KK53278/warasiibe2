@@ -4,23 +4,23 @@
         <% notifications.each do |notification| %>
         <% visitor = notification.visitor %>
         <% visited = notification.visited %>
-      <tr>
-        <td>
-          <%= link_to public_customer_path(visitor), class: "text-dark" do %><strong><%= visitor.name %>さん</strong>が<% end %>
-          <% case notification.action %>
-          <% when 'follow' then %>
-            <%= "あなたをフォローしました" %>
-          <% when  'favorite' then %>
-            <%= link_to 'あなたの投稿', public_product_path(notification.product), class: "text-dark", style: "font-weight: bold;" %><%= "にいいねしました" %>
-          <% when 'comment' then %>
-              <%= link_to "あなたの投稿", public_product_path(notification.product), class: "text-dark", style: "font-weight: bold;" %>
-            <span>
-              <%= "にコメントしました" %>
-            </span>
-          <% end %>
-          <small class="text-right text-muted"><%= time_ago_in_words(notification.created_at).upcase %>
-        </td>
-      </tr>
+        <tr>
+          <td>
+            <%= link_to public_customer_path(visitor), class: "text-dark" do %><strong><%= visitor.name %>さん</strong>が<% end %>
+            <% case notification.action %>
+            <% when 'follow' then %>
+              <%= "あなたをフォローしました" %>
+            <% when  'favorite' then %>
+              <%= link_to 'あなたの投稿', public_product_path(notification.product), class: "text-dark", style: "font-weight: bold;" %><%= "にいいねしました" %>
+            <% when 'comment' then %>
+                <%= link_to "あなたの投稿", public_product_path(notification.product), class: "text-dark", style: "font-weight: bold;" %>
+              <span>
+                <%= "にコメントしました" %>
+              </span>
+            <% end %>
+            <small class="text-right text-muted"><%= time_ago_in_words(notification.created_at).upcase %>
+          </td>
+        </tr>
       <% end %>
     </tbody>
   </table>

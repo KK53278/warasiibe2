@@ -22,6 +22,7 @@ class Product < ApplicationRecord
   def favorited_by?(customer)
     favorites.where(customer_id: customer.id).exists?
   end
+  
   # 検索方法分岐
   def self.looks(search, word)
     if search == "perfect_match"
@@ -36,6 +37,7 @@ class Product < ApplicationRecord
       @product = Product.all
     end
   end
+  
   # いいねランキング
   def self.create_all_ranks
     Product.find(Favorite.group(:product_id).order('count(product_id) desc').limit(3).pluck(:product_id))
@@ -83,4 +85,5 @@ class Product < ApplicationRecord
     end
     notification.save if notification.valid?
   end
+  
 end

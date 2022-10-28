@@ -24,7 +24,7 @@ class Customer < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
   # throughでスルーするテーブル
   has_many :followers, through: :reverse_of_relationships, source: :follower
-  # sourceで参照するカラム
+  
   def get_profile_image(width, height)
   unless profile_image.attached?
     file_path = Rails.root.join('app/assets/images/no_image.jpg')
@@ -37,14 +37,17 @@ class Customer < ApplicationRecord
   def follow(customer_id)
     relationships.create(followed_id: customer_id)
   end
+  
   # フォローを外すときの処理
   def unfollow(customer_id)
     relationships.find_by(followed_id: customer_id).destroy
   end
+  
   # フォローしているか判定
   def following?(customer)
     followings.include?(customer)
   end
+  
   # 検索方法分岐
   def self.looks(search, word)
     if search == "perfect_match"

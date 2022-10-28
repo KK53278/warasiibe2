@@ -1,34 +1,45 @@
-	<h1>配送依頼フォーム</h1>
+	<div class='container px-5 px-sm-0'>
+ 	 <div class='row'>
 
-	<ol class="nav">
-		<li>1.入力</li>
-		<li class="current">2.確認</li>
-		<li>3.完了</li>
-	</ol>
+    <div class='col-md-8 offset-md-1'>
 
-	<dl>
-		<dt>郵便番号</dt>
-		<dd><%= @reserve.zip %></dd>
-		<dt>住所</dt>
-		<dd><%= @reserve.adress %></dd>
-		<dt>名前</dt>
-		<dd><%= @reserve.name %></dd>
-		<dt>備考</dt>
-		<dd><%= @reserve.note %></dd>
-	</dl>
+		<h1>配送依頼フォーム</h1>
+			<div style='text-align: center;'>
+				<ol class="navi">
+					<li>1.入力</li>
+					<li class="current">2.確認</li>
+					<li>3.完了</li>
+				</ol>
+			</div>
 
-	<%= form_for @reserve, method: :post, url: public_reserve_back_path do |form| %>
-		<%= form.hidden_field :zip %>
-		<%= form.hidden_field :adress %>
-		<%= form.hidden_field :name %>
-		<%= form.hidden_field :note %>
-		<%= form.submit '入力画面に戻る' %>
-	<% end %>
+		<dl>
+			<dt>郵便番号</dt>
+			<dd><%= @reserve.zip %></dd>
+			<dt>住所</dt>
+			<dd><%= @reserve.adress %></dd>
+			<dt>名前</dt>
+			<dd><%= @reserve.name %></dd>
+			<dt>備考</dt>
+			<dd><%= @reserve.note %></dd>
+		</dl>
 
-	<%= form_for @reserve, method: :post, url: public_reserve_complete_path do |form| %>
-		<%= form.hidden_field :zip %>
-		<%= form.hidden_field :adress %>
-		<%= form.hidden_field :name %>
-		<%= form.hidden_field :note %>
-		<%= form.submit '送信する' %>
-	<% end %>
+		<%= form_for @reserve, method: :post, url: public_reserve_back_path do |form| %>
+			<%= form.hidden_field :zip %>
+			<%= form.hidden_field :adress %>
+			<%= form.hidden_field :name %>
+			<%= form.hidden_field :note %>
+			<%= form.submit '入力画面に戻る' %>
+		<% end %>
+
+		<%= form_for @reserve, method: :post, url: public_reserve_complete_path do |form| %>
+			<%= form.hidden_field :zip %>
+			<%= form.hidden_field :adress %>
+			<%= form.hidden_field :name %>
+			<%= form.hidden_field :note %>
+			<%= form.submit '送信する' %>
+		<% end %>
+
+	  </div>
+
+		</div>
+	</div>

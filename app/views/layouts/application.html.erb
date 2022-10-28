@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
     <title>Warasiibe</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -24,6 +25,7 @@
 
   <body>
     <% if admin_signed_in? %>
+    
     <header>
       <%= link_to admin_products_path, class: 'headline' do %>
         waras<span>ii</span>be
@@ -43,6 +45,7 @@
     </header>
 
     <% elsif customer_signed_in? %>
+    
     <header>
       <%= link_to public_customer_path(current_customer), class: 'headline' do %>
         waras<span>ii</span>be
@@ -59,9 +62,10 @@
       <%= link_to destroy_customer_session_path, method: :delete, class: 'button' do %>
         ログアウト
       <% end %>
-
     </header>
+    
     <% else %>
+    
     <header>
       <%= link_to root_path, class: 'headline' do %>
         waras<span>ii</span>be
@@ -79,6 +83,7 @@
         ログイン
       <% end %>
     </header>
+    
     <% end %>
 
     <%= yield %>

@@ -5,11 +5,10 @@
       <li><%= message %></li>
     <% end %>
   </ul>
-  <% end %>
+<% end %>
 
 <div class='container px-5 px-sm-0'>
   <div class='row'>
-
     <div class='col-md-3'>
       <!--ユーザープロフィール-->
       <%= render 'public/customers/info', customer: @customer %>
@@ -47,7 +46,7 @@
 
         </table>
         <%= paginate @products %>
+        
     </div>
-
   </div>
 </div>

@@ -12,9 +12,9 @@
 
     <div class="col-md-8 offset-md-1">
         <h2>商品詳細</h2>
+
         <table class="table table-hover table-inverse">
           <tr>
-
             <div>
               <%= link_to public_customer_path(@product.customer.id) do %>
                 出品者 : <%= @product.customer.name %><br>
@@ -26,20 +26,21 @@
                 <%= @product.product_name %>
               </h5>
             </td>
+
             <td><%= @product.caption %></td>
             <td>投稿日 : <%= @product.created_at.strftime('%Y/%m/%d') %></td>
             <td>更新日 : <%= @product.updated_at.strftime('%Y/%m/%d') %></td>
             <td><%= render "public/favorites/btn", product: @product %></td>
 
             <div>
-                <% if @product.images.attached? %>
-                  <% @product.images.each do |image| %>
-                    <%= image_tag image.variant(resize:'150x150') %>
-                  <% end %>
-                <% else %>
-                  <%= image_tag 'no_image.jpg' %>
+              <% if @product.images.attached? %>
+                <% @product.images.each do |image| %>
+                  <%= image_tag image.variant(resize:'150x150') %>
                 <% end %>
-              </div>
+              <% else %>
+                <%= image_tag 'no_image.jpg' %>
+              <% end %>
+            </div>
 
             <% if @product.customer == current_customer %>
               <td>
@@ -53,14 +54,16 @@
                   削除
                 <% end %>
               </td>
-              <% else %>
+
+            <% else %>
+
               <!--出品者以外には配送依頼フォームを表示-->
               <td>
                 <%= link_to new_public_reserve_path(@product), class: "btn btn-sm btn-primary" do %>
                   配送依頼
                 <% end %>
               </td>
-              <% end %>
+            <% end %>
           </tr>
         </table>
 
