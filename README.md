@@ -30,4 +30,5 @@
 - IDE：Cloud9
 
 ## 使用素材
-- 使用サイト :「写真AC 写真のフリー素材サイト] https://www.photo-ac.com/ /「シルエットAC シルエットACはシルエット素材が無料！商用利用もOK！」https://www.silhouette-ac.com/
+- 使用サイト :「写真AC 写真のフリー素材サイト] https://www.photo-ac.com/ 
+- 「シルエットAC シルエットACはシルエット素材が無料！商用利用もOK！」https://www.silhouette-ac.com/
